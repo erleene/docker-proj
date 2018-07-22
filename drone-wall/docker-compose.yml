@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  drone-wall:
+    image: juicymo/drone-wall
+    ports:
+      - 3000:4000
+    restart: always
+    environment:
+      - THEME=${DRONE_WALL_THEME}
+      - ORG_NAME=${DRONE_WALL_ORG_NAME}
+      - API_ROOT=${DRONE_HOST}/api/
+      - API_TOKEN=${DRONE_WALL_TOKEN}
